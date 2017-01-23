@@ -38,4 +38,4 @@ before_script:
     - npm install
 
 script:
-    - curl --data "mode=compare&slug=zerif-lite" http://104.236.125.82/slack-commands/themeisle-wraith-service.php
+     grunt wraith
