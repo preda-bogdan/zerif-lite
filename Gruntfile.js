@@ -1,59 +1,21 @@
-/* jshint node:true */
-/* global require, process */
-var timeGrunt = require('time-grunt');
-var path = require('path');
-var loadGruntConfig = require('load-grunt-config');
 
-module.exports = function (grunt) {
+// jshint node:true
+module.exports = function( grunt ) {
     'use strict';
 
-    timeGrunt(grunt);
-
-    var project = {
-        paths: {
-            get config() {
-                return this.grunt;
-            },
-            css: 'css/',
-            grunt: 'grunt/',
-            images: 'images/',
-            js: 'js/',
-            languages: 'languages/',
-            logs: 'logs/'
-        },
-        files: {
-            css: [
-                '*.css',
-                'css/*.css',
-                '!css/*.min.css',
-                '!css/vendor/*.css'
-            ],
-            js: [
-                '*.js',
-                'grunt/**/*.js',
-                'js/**/*.js',
-                'js/**/*.js',
-                '!js/**/*.min.js',
-                '!js/vendor/*.js'
-            ],
-            php: [
-                '**/*.php',
-                '!node_modules/**/*.php'
-            ],
-            get config() {
-                return project.paths.config + '*.js';
-            },
-            grunt: 'Gruntfile.js'
-        },
-        pkg: grunt.file.readJSON('package.json')
-    };
-
-    loadGruntConfig(grunt, {
-        configPath: path.join(process.cwd(), project.paths.config),
-        data: project,
-        jitGrunt: {
-            staticMappings: {
-            }
-        }
-    });
+    var loader = require( 'load-project-config' ),
+        config = require( 'grunt-theme-fleet' );
+    config = config();
+    config.files.php.push( '!inc/admin/**/*.php' );
+    config.files.php.push( '!class-tgm-plugin-activation.php' );
+    config.files.js.push( '!inc/admin/**/*.js' );
+    config.files.js.push( '!inc/icon-picker/js/*.js' );
+    config.files.js.push( '!js/bootstrap.js' );
+    config.files.js.push( '!js/bootstrap.min.js' );
+    config.files.js.push( '!js/html5shiv.min.js' );
+    config.files.js.push( '!js/html5shiv.js' );
+    config.files.js.push( '!js/plugin.home.js' );
+    config.files.js.push( '!js/scrollReveal.js' );
+    config.files.js.push( '!js/skip-link-focus-fix.js' );
+    loader( grunt, config ).init();
 };
