@@ -1,0 +1,29 @@
+# type: wordpress-plugin|wordpress-theme|vuejs-kit|auto
+# path:
+#   - "/home"
+#   - "/blog"
+#   - "/page1"
+# size:
+#   - 1360
+#   - 480
+# wait: 1000
+# theme: zerif-lite
+# plugins:
+#   pirate-forms: '145'
+#   visualizer: '192'
+# extra_js: "<url of js file>"
+---
+type: wordpress-theme
+path:
+  - markup-html-tags-and-formatting/
+  - markup-image-alignment/
+  - category/uncategorized/
+size:
+  - 1360
+  - 480
+wait: 1000
+theme: zerif-lite
+plugins:
+  pirate-forms: "2.4.4"
+  visualizer: "3.0.10"
+extra_js: "test.js"
