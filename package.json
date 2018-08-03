@@ -1,8 +1,9 @@
 {
   "name": "zerif-lite",
   "nicename": "Zerif Lite",
-  "version": "2.0.2",
+  "version": "1.8.5-43",
   "description": "Zerif Lite theme",
+  "category": "themes",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Codeinwp/zerif-lite.git"
@@ -24,8 +25,12 @@
     "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
   },
   "devDependencies": {
-    "grunt-theme-fleet": "https://github.com/Codeinwp/grunt-theme-fleet/tarball/master",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-theme-fleet": "codeinwp/grunt-theme-fleet",
+    "grunt-version": "^1.1.1",
     "load-project-config": "~0.2.0"
   },
-  "wraithSlug": "zerif-lite"
+  "wraithSlug": [
+    "zerif-lite"
+  ]
 }
